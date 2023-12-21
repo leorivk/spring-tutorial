@@ -57,4 +57,12 @@ public class SingletonTest {
         // 같은 객체 반환
         assertThat(memberService1).isSameAs(memberService2);
     }
+
+    @Test
+    void configurationDeep() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        // AppConfig도 스프링 빈으로 등록
+        AppConfig bean = ac.getBean(AppConfig.class);
+        System.out.println("bean = " + bean.getClass()); // 출력 : bean = class study.core.AppConfig$$SpringCGLIB$$0
+    }
 }

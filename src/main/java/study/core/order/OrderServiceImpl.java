@@ -1,10 +1,8 @@
 package study.core.order;
 
 import study.core.discount.DiscountPolicy;
-import study.core.discount.FixDiscountPolicy;
 import study.core.member.Member;
 import study.core.member.MemberRepository;
-import study.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 
@@ -22,5 +20,10 @@ public class OrderServiceImpl implements OrderService {
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
+
+    // 테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
