@@ -6,7 +6,6 @@ import study.core.member.Grade;
 import study.core.member.Member;
 
 @Component
-@Qualifier("fixDiscountPolicy")
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int discountFixAmount = 1000;
